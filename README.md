@@ -1,42 +1,49 @@
 # Cereal Monitor
 
-A native Windows C++ serial monitor project built with Visual Studio.
+A lightweight Windows serial monitor built with C++ and Win32 API.
 
-## Current project status
+## Downloads
 
-This repository contains the Visual Studio project and its current Win32 serial-monitor implementation.
-It is an in-progress project, not yet a verified production release. In particular, the UI still uses
-some native Windows controls, and the serial features should be tested with real USB-to-serial hardware.
+Get the latest version from the [Releases page](https://github.com/its-noid-dev/Cereal-Monitor/releases/latest).
 
-## Build in Visual Studio
+| Download | Description |
+|---|---|
+| [Portable ZIP](https://github.com/its-noid-dev/Cereal-Monitor/releases/tag/Portable) | Run Cereal Monitor without installing it. |
+| [Windows Installer](https://github.com/its-noid-dev/Cereal-Monitor/releases/tag/Installer) | Install Cereal Monitor on your Windows PC. |
 
-1. Open `Cereal Monitor.vcxproj` in Visual Studio 2022 or newer with the **Desktop development with C++** workload.
-2. Select **Release** and **x64**.
-3. Select **Build > Clean Solution**.
-4. Select **Build > Rebuild Solution**.
-5. The executable should be created under `x64/Release/`.
+## Features
 
-The project uses the Windows API and the C++ standard library. No third-party runtime library is intentionally required.
+- USB serial communication
+- COM port selection
+- Configurable baud rate
+- Send and receive serial data
+- Lightweight Windows application
+- Portable version available
 
-## Portable build
+## Requirements
 
-After a successful Release x64 build, run `scripts/make-portable.ps1` from the repository root.
-It copies the executable and README into `dist/CerealMonitor-Portable/`.
+- Windows 10 or Windows 11
+- USB-to-serial device or compatible COM port
 
-## Installer
+## Installation
 
-The `installer/CerealMonitor.iss` script is for Inno Setup 6. Build the Release x64 executable first,
-then open the script in Inno Setup Compiler and compile it. The installer output is written to
-`installer/Output/`.
+**Installer**
+1. Download the Windows installer from Releases.
+2. Run the installer.
+3. Launch Cereal Monitor.
 
-## USB serial notes
+**Portable**
+1. Download the Portable ZIP.
+2. Extract the ZIP file.
+3. Run `CerealMonitor.exe`.
 
-- Close other serial-terminal programs before connecting to the same COM port.
-- Select the baud rate that matches the device firmware.
-- Windows may require the USB-to-serial driver for the device (for example, a CH340, CP210x, or FTDI driver).
-- Serial communication has not been hardware-tested as part of this source package.
+## Building from Source
 
-## Contributing
+1. Clone or download this repository.
+2. Open `Cereal Monitor.vcxproj` or the solution in Visual Studio.
+3. Select `Release` and `x64`.
+4. Build the project.
 
-Issues and pull requests are welcome. Please include your Windows version, Visual Studio version,
-device/USB-serial chipset, baud rate, and build output when reporting a problem.
+## License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE).
